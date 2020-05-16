@@ -1,0 +1,121 @@
+SELECT * FROM public."Earthquake"
+Select * from public."Earthquake" where occurred_on >= '2000-01-01' 
+Select * from public."Earthquake" where occurred_on >= '2010-01-01' AND occurred_on <= '2010-12-31'
+order by magnitude Desc
+limit 1;
+SELECT * FROM public."Earthquake" WHERE cause = 'explosion';
+SELECT place, magnitude, occurred_on FROM public."Earthquake" 
+ORDER BY magnitude DESC LIMIT 1;
+
+************************insert 1000 row data in postgressql through the python*******************************
+
+import psycopg2
+import time
+#number of fows to add in each batch
+n = 10000
+# Generate single insert into query
+single_query = insert into post (user_id, post_test) values"
+values (1, 'All work and no play makes jack a dull boy')
+#Generate on Big Query
+big_query = insert into post (user_id, post_test) values"
+fro i in range(n);
+big_query += "(1, 'All work and no play makes jack a dull boy'),"
+big_query = big_query.strip(',') + ';' # replace trailing ',' with ';'
+# connect to database & create cursor
+password = open('password.txt', 'r').read()
+conn = psycomp2.connect("dbname=chatrughan user=postgres password={0}". format(password))
+cur = conn.curso()
+#Time the 'n' individual queries
+start_time = time.time()
+for i in range(n):
+cur.execute(single_query)
+conn.commit()
+stop_time = time.time()
+print("{0}" individual queries took {1} seconds.fromat(n, stopo_time - start_time))
+#time the Big query 
+Start_time = time.time()
+cur.execute(big_query)
+conn.commit
+stop_time = time.time()
+print("{0}" individual queries took {1} seconds.fromat(n, stopo_time - start_time))
+#close both curso and connection to database 
+cur.close()
+conn.close()
+
+Select specify column
+Where specify rows
+
+CREATE DATABASE chaturghan
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1;
+
+ SELECT COUNT (*) FROM earthquake; 
+ Select * from earthquake where place >= 'm'; 
+
+
+Table: public."Earthquake"
+
+DROP TABLE public."Earthquake";
+
+CREATE TABLE public."Earthquake"
+(
+    earthquake_id character varying COLLATE pg_catalog."default",
+    occurred_on character varying COLLATE pg_catalog."default",
+    latitude character varying COLLATE pg_catalog."default",
+    longitude character varying COLLATE pg_catalog."default",
+    depth character varying COLLATE pg_catalog."default",
+    magnitude character varying COLLATE pg_catalog."default",
+    calculation_method character varying COLLATE pg_catalog."default",
+    network_id character varying COLLATE pg_catalog."default",
+    place character varying COLLATE pg_catalog."default",
+    cause character varying COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."Earthquake"
+    OWNER to postgres;
+
+
+CREATE DATABASE social_network;
+CREATE TABLE users (
+user_id int,
+first_name VARCHAR(100),
+last_name Varchar(255),
+);
+
+ALTER TABLE users ADD encrypted_password VARCHAR(1000);
+ALTER TABLE users DROP COLUMN email;
+DROP TABLE users;
+DROP DATABASE social_natwork;
+
+INSERT INTO movies (movie_id, title, description, price)
+values(1, 'Gattaca', 'Movie or documentary', 4.99;
+SELECT * FROM movies; ####(unique column id is called primary key)
+SELECT title FROM movies;
+
+INSERT INTO movies (title, price) VALUES ('Star Wars', 8.99)
+INSERT INTO movies (title, price) VALUES ('Logan Runn', 3.99)
+INSERT INTO movies (title, price) VALUES ('Solaris', 2.99)
+INSERT INTO movies (title, price) VALUES ('Jaws', 5.99)
+INSERT INTO movies (title, price) VALUES ('Silent Running', 8.99)
+
+SELECT title, price FROM movies;
+SELECT title, price FROM movies ORDER BY price;
+SELECT title, price FROM movies ORDER BY price DESC;
+
+SELECT title, price FROM movies ORDER BY price;
+
+DELETE FROM movies WHERE title = 'Star Wars';
+)
+SELECT title, price FROM movies ORDER BY price;
+
+Joins - Select data from multiple table process is called joins
+View- Latest solution create virtual table called views. this view collected data from multiple table and it looks like it is in single table.
+Indexes - Makes the query fast and effiecient
+Transaction  ensured the changes are made on database or any error in query.
+
+"C:\\Program Files\\PostgreSQL\\12\\bin\\psql.exe" --command " "\\copy public.song (title, artist, year_released, duration, tempo, loudness, song_id) FROM 'C:/Users/admin/Music/DATA-M~1/DATA-M~1/songs.csv' CSV ENCODING 'UTF8' QUOTE '\"' ESCAPE '''';""
+
